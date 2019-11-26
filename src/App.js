@@ -8,12 +8,26 @@ import { Event } from './components/ShoppingCart/Event'
 import { UserEvent } from './components/ShoppingCart/UserEvent'
 import { Settings } from './components/ShoppingCart/Settings'
 import { NewUser } from './components/ShoppingCart/NewUser'
-import { useFetchEvents, useOrdersWebsocket } from './api'
+import { useFetchEvents, useOrdersWebsocket, fetchEvents, fetches } from './api'
 
 export const App = props => {
   console.log('app')
-  useFetchEvents()
-  useOrdersWebsocket()
+  const dispatch = useDispatch()
+  const [timeLeft, setTimeLeft] = React.useState(0)
+
+  React.useEffect(() => {
+    // useOrdersWebsocket()
+    // console.log('init')
+    setTimeout(() => {
+      setTimeLeft(Date.now())
+      // console.log('init2')
+    }, 30000)
+  }, [timeLeft])
+
+  React.useEffect(() => {
+    fetches(dispatch)
+    // console.log('init3')
+  }, [timeLeft])
 
   return (
     <>

@@ -133,7 +133,7 @@ export const NewUser = props => {
                 groupAge: selectedAge.slug,
                 district: selectedDist.slug,
                 organization: selectedOrg.slug,
-                event: eventId,
+                eventId: eventId,
                 gender,
                 scores: event.routes.map(r => {
                   return {

@@ -46,12 +46,16 @@ export const useFetchEvents = () => {
 
   useEffect(() => {
     fetchEvents(dispatch)
-    fetchUsers(dispatch)
-    fetchAges(dispatch)
-    fetchDistricts(dispatch)
-    fetchOrgs(dispatch)
-    fetchRoutes(dispatch)
   }, [])
+}
+
+export const fetches = dispatch => {
+  fetchEvents(dispatch)
+  fetchUsers(dispatch)
+  fetchAges(dispatch)
+  fetchDistricts(dispatch)
+  fetchOrgs(dispatch)
+  fetchRoutes(dispatch)
 }
 
 export const fetchEvents = async dispatch => {
