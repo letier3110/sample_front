@@ -34,8 +34,8 @@ export const postUser = async (dispatch, payload) => {
   dispatch(createUser(payload))
   postParticipant(dispatch, {
     user: {
-      slug: result,
-      scores: payload.result
+      slug: result.data,
+      scores: payload.scores
     },
     slug: payload.eventId
   })
